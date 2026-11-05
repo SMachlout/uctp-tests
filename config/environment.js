@@ -3,7 +3,7 @@
 //
 // YOU CHANGE ONE THING: ME, your name-tag from the UCTP top bar
 // ("You are: Ana-4821" -> 'Ana-4821'). Keep the quotes.
-const ME = process.env.UCTP_NAME_TAG || 'Ana-4821';
+const ME = process.env.UCTP_NAME_TAG || 'Steve-8414';
 
 const environments = {
   staging: {

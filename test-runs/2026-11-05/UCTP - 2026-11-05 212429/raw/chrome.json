@@ -1,0 +1,981 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\machl\\uctp-tests\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/web",
+      "tests/integration",
+      "--project=chrome",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(I2|W3|W4|I1|W8) ·",
+      "--headed"
+    ],
+    "configFile": "C:\\Users\\machl\\uctp-tests\\playwright.config.ts",
+    "rootDir": "C:/Users/machl/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/machl/uctp-tests/test-runs/2026-11-05/UCTP - 2026-11-05 212429/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/machl/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/machl/uctp-tests/test-runs/2026-11-05/UCTP - 2026-11-05 212429/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "C:/Users/machl/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/machl/uctp-tests/test-runs/2026-11-05/UCTP - 2026-11-05 212429/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/machl/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\raw\\chrome.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "integration\\taxpayers.spec.ts",
+      "file": "integration/taxpayers.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "I1 · AC-2 · create \"Ana <4 letters> Dela Cruz\" on screen, then read the API list",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2035,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T13:24:32.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ff0398ef9a84fc6e66cb-431f7ef310f7e5199a20",
+          "file": "integration/taxpayers.spec.ts",
+          "line": 20,
+          "column": 5
+        },
+        {
+          "title": "I2 · AC-2 · create by API with an email, then read My data › My taxpayers",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 877,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T13:24:36.509Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome\\attachments\\screenshot-01b7dfb5a846168a3ded1d5a1642238e5ea0d77f.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 637,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T13:24:37.875Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry1\\attachments\\screenshot-73080f103c853dbf62b72c387fa402572b1c2d2e.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 848,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T13:24:39.228Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry2\\attachments\\screenshot-5d23b7059b7f23b28e82b7e4d2eff6bafd1b64d1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry2\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 784,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T13:24:40.798Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry3\\attachments\\screenshot-bf66827f805600be2366f4348b1cd52e573d9700.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry3\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ff0398ef9a84fc6e66cb-bd18c5e56543979c9d86",
+          "file": "integration/taxpayers.spec.ts",
+          "line": 35,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "integration\\trn-01.spec.ts",
+      "file": "integration/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TRN-01 Register a taxpayer (integration: API and screen)",
+          "file": "integration/trn-01.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "I1 · AC-1, AC-2 · create \"Ana Dela Cruz\" with the API, see it on the screen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1050,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T13:24:42.329Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06816b618c52f28575de-1d2cfff2f693e0c99c11",
+              "file": "integration/trn-01.spec.ts",
+              "line": 20,
+              "column": 7
+            },
+            {
+              "title": "I2 · AC-1, AC-3 · create \"  Rosa Web  \" on the screen, read \"Rosa Web\" from the API",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1261,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T13:24:43.617Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06816b618c52f28575de-1ea8ba2b65e2f56ab201",
+              "file": "integration/trn-01.spec.ts",
+              "line": 30,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "web\\taxpayers.spec.ts",
+      "file": "web/taxpayers.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "W3 · AC-2 · create with an email, then find the name, mobile and email under My data › My taxpayers",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30056,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:58:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T13:24:44.908Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome\\attachments\\screenshot-2fd8630e3d77c50c8763ecf7bce18205c4a987f1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30057,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:58:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T13:25:15.641Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry1\\attachments\\screenshot-2a2112f9767a050cae2fb7b2377e83bcef6ef418.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry1\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30054,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:58:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T13:25:46.751Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry2\\attachments\\screenshot-3869ca385f05f3b68b8a8eb198c5b4079273eae2.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry2\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30051,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:58:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T13:26:18.241Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry3\\attachments\\screenshot-3905d545fa0b20c2186f5103232e2efd4d63cc4b.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry3\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ed9e1af57a92ceddf652-612636abdb1ceb5ea29a",
+          "file": "web/taxpayers.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "W4 · AC-2 · reload My taxpayers and still see the name, mobile and email",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30070,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:70:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T13:26:49.191Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome\\attachments\\screenshot-00c99c28cda94b4000325737ff36907bdd44b81d.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30047,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:70:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T13:27:20.137Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry1\\attachments\\screenshot-3dea54e2227c2df44183f812b5ff6a0efffc08eb.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry1\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30066,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:70:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T13:27:50.997Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry2\\attachments\\screenshot-728a83d22ddc1999e15db4739ebbc7572486be57.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry2\\error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30060,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts",
+                        "column": 58,
+                        "line": 29
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My taxpayers' })\u001b[22m\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();\n> 29 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n     |                                                          ^\n  30 | }\n  31 | async function refusedOnScreen(page: any, msg: string) {\n  32 |   await expect(page.getByText(msg).first()).toBeVisible();\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:29:58)\n    at C:\\Users\\machl\\uctp-tests\\tests\\web\\taxpayers.spec.ts:70:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T13:28:22.016Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry3\\attachments\\screenshot-c7a223ea17aa810e5847c28cb49d02f51bf012b6.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 212429\\artifacts\\chrome\\web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry3\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ed9e1af57a92ceddf652-1a1cb40458c0777b40f4",
+          "file": "web/taxpayers.spec.ts",
+          "line": 64,
+          "column": 5
+        },
+        {
+          "title": "W8 · AC-5 · type the full name \"A\" (1 letter)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 872,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T13:28:53.229Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ed9e1af57a92ceddf652-6b85ad513525abecbfa0",
+          "file": "web/taxpayers.spec.ts",
+          "line": 113,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "web\\trn-01.spec.ts",
+      "file": "web/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TRN-01 Register a taxpayer (web)",
+          "file": "web/trn-01.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "W3 · AC-2 · see the new taxpayer \"Ana Dela Cruz\" in My data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 892,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T13:28:54.502Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55ceaf0a9589a0d92f22-f7d0799d8dd8a77bdf40",
+              "file": "web/trn-01.spec.ts",
+              "line": 33,
+              "column": 7
+            },
+            {
+              "title": "W4 · AC-3 · create a taxpayer using \"  Rosa Web  \": shown as \"Rosa Web\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 883,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T13:28:55.405Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55ceaf0a9589a0d92f22-1b3cfc0adf7f81bc9b05",
+              "file": "web/trn-01.spec.ts",
+              "line": 45,
+              "column": 7
+            },
+            {
+              "title": "W8 · AC-8 · refuse the mobile 0917-123-4567 (dashes) on the screen",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 684,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T13:28:56.296Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "55ceaf0a9589a0d92f22-a64295cfa3edca37264b",
+              "file": "web/trn-01.spec.ts",
+              "line": 87,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T13:24:32.068Z",
+    "duration": 265086.808,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

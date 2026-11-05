@@ -1,0 +1,390 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\machl\\uctp-tests\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/web",
+      "tests/integration",
+      "--project=chrome",
+      "--workers=1",
+      "--retries=3",
+      "--pass-with-no-tests",
+      "--grep",
+      "(?:^|\\s)(I2) ·",
+      "--headed"
+    ],
+    "configFile": "C:\\Users\\machl\\uctp-tests\\playwright.config.ts",
+    "rootDir": "C:/Users/machl/uctp-tests/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/machl/uctp-tests/test-runs/2026-11-05/UCTP - 2026-11-05 213515/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "C:/Users/machl/uctp-tests/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/machl/uctp-tests/test-runs/2026-11-05/UCTP - 2026-11-05 213515/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "C:/Users/machl/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/machl/uctp-tests/test-runs/2026-11-05/UCTP - 2026-11-05 213515/artifacts/chrome",
+        "repeatEach": 1,
+        "retries": 3,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/machl/uctp-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/(web|integration)[\\\\/].*\\.spec\\.(ts|js|mjs)$/"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\raw\\chrome.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "integration\\taxpayers.spec.ts",
+      "file": "integration/taxpayers.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "I2 · AC-2 · create by API with an email, then read My data › My taxpayers",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4139,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-05T13:35:17.517Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome\\attachments\\screenshot-32dff31fe17ecdf14b134982b9aba806b969563a.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2817,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-11-05T13:35:22.433Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry1\\attachments\\screenshot-d851acf0464698c0f1cedcdc43b0709db96470c8.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry1\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1703,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2026-11-05T13:35:26.022Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry2\\attachments\\screenshot-80ba707811f9236bdbc3f12a74d163729a3a91f2.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry2\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2381,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9",
+                    "location": {
+                      "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                      "column": 53,
+                      "line": 16
+                    },
+                    "snippet": "  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                        "column": 53,
+                        "line": 16
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'My data' })\u001b[22m\n\n\n  14 |\n  15 | async function toMyTaxpayers(page: any) {\n> 16 |   await page.getByRole('link', { name: 'My data' }).click();\n     |                                                     ^\n  17 |   await page.getByRole('link', { name: 'My taxpayers' }).click();\n  18 | }\n  19 |\n    at toMyTaxpayers (C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:16:53)\n    at C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts:41:9"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 3,
+                  "startTime": "2026-11-05T13:35:28.629Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry3\\attachments\\screenshot-5902a88a1acbfbf10bed5544802be9e4ccb5dcd4.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\machl\\uctp-tests\\test-runs\\2026-11-05\\UCTP - 2026-11-05 213515\\artifacts\\chrome\\integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry3\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\machl\\uctp-tests\\tests\\integration\\taxpayers.spec.ts",
+                    "column": 53,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "ff0398ef9a84fc6e66cb-bd18c5e56543979c9d86",
+          "file": "integration/taxpayers.spec.ts",
+          "line": 35,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "integration\\trn-01.spec.ts",
+      "file": "integration/trn-01.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "TRN-01 Register a taxpayer (integration: API and screen)",
+          "file": "integration/trn-01.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "I2 · AC-1, AC-3 · create \"  Rosa Web  \" on the screen, read \"Rosa Web\" from the API",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4266,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-05T13:35:31.758Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06816b618c52f28575de-1ea8ba2b65e2f56ab201",
+              "file": "integration/trn-01.spec.ts",
+              "line": 30,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-05T13:35:17.130Z",
+    "duration": 19263.078999999998,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

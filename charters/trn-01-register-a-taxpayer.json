@@ -1,0 +1,845 @@
+{
+ "format": "qe360-mindmap",
+ "version": 1,
+ "title": "TRN-01 Register a taxpayer",
+ "settings": {
+  "rollupMode": "percentage",
+  "leafOnlyRollup": true,
+  "enableStatusPropagation": true,
+  "statusDefinitions": [
+   {
+    "id": "st_notstarted",
+    "label": "Not Yet Started",
+    "color": "transparent",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_inprogress",
+    "label": "In Progress",
+    "color": "#38BDF8",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_clarify",
+    "label": "For Clarification",
+    "color": "#EAB308",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_blocked",
+    "label": "Blocked",
+    "color": "#EC4899",
+    "countsAsComplete": false,
+    "triggersFailureCascade": true
+   },
+   {
+    "id": "st_failed",
+    "label": "Failed",
+    "color": "#F87171",
+    "countsAsComplete": false,
+    "triggersFailureCascade": true
+   },
+   {
+    "id": "st_passed",
+    "label": "Passed",
+    "color": "#10B981",
+    "countsAsComplete": true,
+    "triggersFailureCascade": false
+   },
+   {
+    "id": "st_flaky",
+    "label": "Flaky",
+    "color": "#F59E0B",
+    "countsAsComplete": false,
+    "triggersFailureCascade": false
+   }
+  ],
+  "severityOrder": [
+   "st_failed",
+   "st_blocked",
+   "st_clarify",
+   "st_inprogress",
+   "st_flaky",
+   "st_passed",
+   "st_notstarted"
+  ]
+ },
+ "root": {
+  "id": "n1",
+  "text": "UCTP",
+  "note": "",
+  "collapsed": false,
+  "statusId": null,
+  "highlight": null,
+  "children": [
+   {
+    "id": "n2",
+    "text": "TRN-01 · Register a taxpayer",
+    "note": "",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": [
+     {
+      "id": "n3",
+      "text": "AC-1 Section \"1 — Create a taxpayer\" shows \"[full name] created — mobile [mobile].\"",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "n4",
+        "text": "Upon page load: Training setup shows the heading \"1 — Create a taxpayer\", the fields \"Full name\", \"Mobile (09XXXXXXXXX)\", \"Email (optional)\" and the button \"Create taxpayer\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n5",
+        "text": "Element validations: Full name - text, required (ASK: confirm), no default; Mobile - text, required (ASK: confirm); Email - text, optional",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n6",
+        "text": "Functional validations: POST /api/v1/training/taxpayers with X-Tenant-ID: TAGAYTAY and X-User-ID: Steve-8414 returns 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n7",
+        "text": "Steps: 1. Open Training setup. 2. Fill Full name and Mobile. 3. Press \"Create taxpayer\". 4. Read the result box.",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n8",
+        "text": "A1 · Function + : create a taxpayer using a \"09\" mobile and no email -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n9",
+        "text": "A2 · Function + : create a taxpayer using a \"+639\" mobile and an email -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "na",
+        "text": "W1 · Function + : create \"Ana <4 letters> Dela Cruz\" with a \"09\" mobile -> result box shows \"Ana <4 letters> Dela Cruz created — mobile 09XXXXXXXXX.\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nb",
+        "text": "W2 · Inputs + : create with a \"+639\" mobile -> result box shows \"[name] created — mobile +639XXXXXXXXX.\" (mobile as typed)",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nc",
+        "text": "W17 · Navigation + : open Training setup from the top bar -> shows \"1 — Create a taxpayer\", \"Full name\", \"Mobile (09XXXXXXXXX)\", \"Email (optional)\" and \"Create taxpayer\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nd",
+        "text": "ASK: Does a second quick press of \"Create taxpayer\" (double click) create one taxpayer or return 409 \"already registered for this tenant\"?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "ne",
+        "text": "ASK: Are Full name and Mobile required, and which message does an empty Mobile return (empty Email too)?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "nf",
+      "text": "AC-2 The same taxpayer details show under My data › My taxpayers",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "ng",
+        "text": "Steps: 1. Create a taxpayer with an email. 2. Press \"My data\". 3. Press \"My taxpayers\".",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nh",
+        "text": "W3 · Store + : create with name, mobile and email, then open My data › My taxpayers -> the page shows the name, the mobile and the email",
+        "note": "chrome: failed - Test timeout of 30000ms exceeded. Error: locator.click: Target page, context or browser has been closed Call log: - waiting for getByRole('link', { name: 'My taxpayers' }) 27 | async function toMyTaxpayers(page: any) { 28 | await page.getByRole('link', { name: 'My data' }).click();",
+        "collapsed": false,
+        "statusId": "st_failed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "ni",
+        "text": "W4 · Store + : after W3's steps, reload My taxpayers -> the page still shows the name, the mobile and the email",
+        "note": "chrome: failed - Test timeout of 30000ms exceeded. Error: locator.click: Target page, context or browser has been closed Call log: - waiting for getByRole('link', { name: 'My taxpayers' }) 27 | async function toMyTaxpayers(page: any) { 28 | await page.getByRole('link', { name: 'My data' }).click();",
+        "collapsed": false,
+        "statusId": "st_failed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nj",
+        "text": "I1 · Store + : create on screen, then GET /api/v1/training/taxpayers as Steve-8414 -> the response contains the name and the mobile typed on screen",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1a",
+        "text": "W8 · Domain - : type \"A\" -> screen shows \"2-100 characters: letters, spaces, . - ' and Ñ only\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nk",
+        "text": "I2 · Store + : create by API with an email, then open My data › My taxpayers -> the page shows the same name, mobile and email",
+        "note": "chrome: blocked - Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements: 1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true }) 2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' }) 3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' }) Call log: - waiting for getByRole('link', { name: 'My data' })",
+        "collapsed": false,
+        "statusId": "st_blocked",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nl",
+        "text": "ASK: What status code and body shape does GET /api/v1/training/taxpayers return (I1, I2 and A20 only assert a 2xx status and that the body text contains the mobile)?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "nm",
+      "text": "AC-3 Spaces around the name are removed, both in the \"created\" message and in My data",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "nn",
+        "text": "A3 · General + : create with 3 spaces before and after \"Ana <4 letters> Dela Cruz\" -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "no",
+        "text": "W5 · General + : type 3 spaces before and after the name -> result box text reads \"[trimmed name] created — mobile [mobile].\" with no extra spaces around the name",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "np",
+        "text": "W6 · Store + : same input, then My data › My taxpayers -> the name shows with no spaces around it",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nq",
+        "text": "ASK: Is the 2-character minimum counted after trimming (for example \"  A  \")? What do 2 spaces alone return?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nr",
+        "text": "ASK: How does My taxpayers render the name (cell or row), so W6 can read the raw text?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "ns",
+      "text": "AC-4 A mobile that's already registered is not accepted. Message: \"already registered for this tenant\"",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "nt",
+        "text": "A4 · Function - : create the same mobile twice -> second call 409 {\"detail\":{\"mobile\":\"already registered for this tenant\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nu",
+        "text": "A5 · Function - : register a mobile, then send it again with another name and another email -> 409 {\"detail\":{\"mobile\":\"already registered for this tenant\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nv",
+        "text": "W7 · Function - : create on screen, then create again with the same mobile -> screen shows \"already registered for this tenant\" and no second \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nw",
+        "text": "I3 · Function - : register a mobile by API, then submit it on screen -> screen shows \"already registered for this tenant\"; a second API call returns 409 with the same message",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nx",
+        "text": "ASK: Is \"09171234567\" the same mobile as \"+639171234567\"?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "ny",
+        "text": "ASK: Does a mobile registered under another name-tag in tenant TAGAYTAY return 409 or 201 (AC-4 says \"tenant\", AC-7 says \"name-tag\")?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "nz",
+        "text": "ASK: Where does the screen place the message (under the field or in the result box)?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "n10",
+      "text": "AC-5 Name accepts only 2–100 characters: letters, spaces, . - ' and Ñ. Message: \"2-100 characters: letters, spaces, . - ' and Ñ only\"",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "n11",
+        "text": "Element validations: Full name - text, 2-100 characters, letters, spaces, . - ' and Ñ, message \"2-100 characters: letters, spaces, . - ' and Ñ only\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n12",
+        "text": "A6 · Domain + : full name \"Al\" (2 characters, at the minimum) -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n13",
+        "text": "A7 · Domain - : full name \"A\" (1 character, below the minimum) -> 422 {\"detail\":{\"full_name\":\"2-100 characters: letters, spaces, . - ' and Ñ only\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n14",
+        "text": "A8 · Domain + : full name of 100 characters (at the maximum) -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n15",
+        "text": "A9 · Domain - : full name of 101 characters (above the maximum) -> 422 {\"detail\":{\"full_name\":\"2-100 characters: letters, spaces, . - ' and Ñ only\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n16",
+        "text": "A10 · Syntax + : full name \"Ana-Marie <4 letters> O'Neil Ñ Jr.\" (letters, space, hyphen, apostrophe, period, Ñ) -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n17",
+        "text": "A11 · Syntax - : full name with a digit \"Ana <4 letters>2 Cruz\" -> 422 with the AC-5 message under \"full_name\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n18",
+        "text": "A12 · Syntax - : full name with \"@\" \"Ana <4 letters> @ Cruz\" -> 422 with the AC-5 message under \"full_name\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n19",
+        "text": "A13 · General - : empty full name \"\" (0 characters) -> 422 with the AC-5 message under \"full_name\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1b",
+        "text": "W9 · Syntax - : type \"Ana <4 letters>2 Cruz\" -> screen shows \"2-100 characters: letters, spaces, . - ' and Ñ only\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1c",
+        "text": "W10 · Domain - : type a name of 101 characters -> screen shows \"2-100 characters: letters, spaces, . - ' and Ñ only\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": "st_passed",
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1d",
+        "text": "ASK: Are lowercase ñ and accented letters (é, ú) allowed?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1e",
+        "text": "ASK: Does the Full name box stop typing at 100 characters (W10 would then not reach 101)?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "n1f",
+      "text": "AC-6 Email is optional. If typed, it needs one @ with a dot after it, 254 characters max. Message: \"invalid email format\"",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "n1g",
+        "text": "Element validations: Email - text, optional, one @ with a dot after it, max 254, message \"invalid email format\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1h",
+        "text": "W12 · Function + : leave Email empty -> result box shows \"[name] created — mobile [mobile].\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1i",
+        "text": "A14 · Domain + : email of 254 characters (at the maximum) -> 201 with taxpayer_id",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1j",
+        "text": "A15 · Domain - : email of 255 characters (above the maximum) -> 422 {\"detail\":{\"email\":\"invalid email format\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1k",
+        "text": "A16 · Syntax - : email \"ana.mail.ph\" (no @) -> 422 {\"detail\":{\"email\":\"invalid email format\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1l",
+        "text": "A17 · Syntax - : email \"ana@dela@mail.ph\" (two @) -> 422 {\"detail\":{\"email\":\"invalid email format\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1m",
+        "text": "A18 · Syntax - : email \"ana@mail\" (no dot after @) -> 422 {\"detail\":{\"email\":\"invalid email format\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1n",
+        "text": "A19 · Syntax - : email \"ana.dela@mail\" (dot only before @) -> 422 {\"detail\":{\"email\":\"invalid email format\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1o",
+        "text": "W11 · Syntax - : type email \"ana.mail.ph\" -> screen shows \"invalid email format\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1p",
+        "text": "ASK: Does a local part longer than 64 characters count (A14 uses 249 characters before the @)? Is an empty-string email \"\" accepted? Are spaces around an email removed?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "n1q",
+      "text": "AC-7 A taxpayer created under my name-tag shows only for that name-tag. Under another name-tag, My data shows \"None yet — create one in Training setup.\" and the Taxpayer lists are empty.",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "n1r",
+        "text": "A20 · User - : create as Steve-8414, then GET as Steve-8414-other -> the Steve-8414 list contains the mobile; the Steve-8414-other list does not",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1s",
+        "text": "W13 · User - : create as Steve-8414, sign in as \"Steve-8414-other\", open My data › My taxpayers -> shows \"None yet — create one in Training setup.\" and does not show the mobile",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1t",
+        "text": "I4 · User - : create by API as Steve-8414; as Steve-8414-other the screen shows \"None yet — create one in Training setup.\" and GET as Steve-8414-other does not contain the mobile",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1u",
+        "text": "ASK: Which \"Taxpayer lists\" must be empty under another name-tag (names of the screens or dropdowns)?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1v",
+        "text": "ASK: Does Steve-8414-other already own taxpayers from earlier runs?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "n1w",
+      "text": "AC-8 Mobile accepts only 09 + 9 digits, or +639 + 9 digits. No spaces, no dashes. Message: \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+      "note": "",
+      "collapsed": false,
+      "statusId": null,
+      "highlight": null,
+      "children": [
+       {
+        "id": "n1x",
+        "text": "Element validations: Mobile - text, 09 + 9 digits or +639 + 9 digits, no spaces, no dashes, message \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1y",
+        "text": "A21 · Numbers - : mobile \"09\" + 8 digits (10 characters, below) -> 422 {\"detail\":{\"mobile\":\"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\"}}",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n1z",
+        "text": "A22 · Numbers - : mobile \"09\" + 10 digits (12 characters, above) -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n20",
+        "text": "A23 · Numbers - : mobile \"+639\" + 8 digits (below) -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n21",
+        "text": "A24 · Numbers - : mobile \"+639\" + 10 digits (above) -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n22",
+        "text": "A25 · Syntax - : mobile \"0917 1234567\" (space) -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n23",
+        "text": "A26 · Syntax - : mobile \"0917-123-4567\" (dashes) -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n24",
+        "text": "A27 · Syntax - : mobile of 10 digits with no 09 or +639 prefix -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n25",
+        "text": "A28 · Syntax - : mobile \"09abcdefghi\" (letters) -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n26",
+        "text": "A29 · Domain - : mobile \"08\" + 9 digits -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n27",
+        "text": "A30 · Domain - : mobile \"+638\" + 9 digits -> 422 with the AC-8 message under \"mobile\"",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n28",
+        "text": "W14 · Syntax - : type \"0917 1234567\" -> screen shows \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n29",
+        "text": "W15 · Numbers - : type \"09\" + 8 digits -> screen shows \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n2a",
+        "text": "W16 · Syntax - : type \"0917-123-4567\" -> screen shows \"must be a PH mobile 09XXXXXXXXX or +639XXXXXXXXX\" and no \"created — mobile\" message",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       },
+       {
+        "id": "n2b",
+        "text": "ASK: What do the API and screen return when two fields are refused together (name and mobile)?",
+        "note": "",
+        "collapsed": false,
+        "statusId": null,
+        "highlight": null,
+        "children": []
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "id": "n2c",
+    "text": "Test run 2026-11-05 13:17: 11 passed, 0 flaky, 2 failed, 1 blocked, 0 not tested",
+    "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-211221/index.html",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": []
+   },
+   {
+    "id": "n2d",
+    "text": "Test run 2026-11-05 13:28: 2 passed, 0 flaky, 2 failed, 1 blocked, 0 not tested",
+    "note": "Browsers: chrome\nBase URL: https://city-treasurer-staging.aiqe.pro\nReport: test-runs/20261105-212429/index.html",
+    "collapsed": false,
+    "statusId": null,
+    "highlight": null,
+    "children": []
+   }
+  ]
+ }
+}

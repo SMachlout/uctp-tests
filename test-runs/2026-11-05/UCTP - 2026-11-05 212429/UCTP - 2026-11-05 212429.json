@@ -1,0 +1,113 @@
+{
+  "run_id": "20261105-212429",
+  "started_at": "2026-11-05T13:24:29.511Z",
+  "finished_at": "2026-11-05T13:28:57.178Z",
+  "base_url": "https://city-treasurer-staging.aiqe.pro",
+  "browsers": [
+    "chrome"
+  ],
+  "story": "UCTP",
+  "counts": {
+    "passed": 7,
+    "flaky": 0,
+    "failed": 2,
+    "blocked": 1,
+    "not_tested": 0
+  },
+  "results": [
+    {
+      "id": "I1",
+      "title": "I1 · AC-2 · create \"Ana <4 letters> Dela Cruz\" on screen, then read the API list",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "I2",
+      "title": "I2 · AC-2 · create by API with an email, then read My data › My taxpayers",
+      "browser": "chrome",
+      "status": "blocked",
+      "error": "Error: locator.click: Error: strict mode violation: getByRole('link', { name: 'My data' }) resolved to 3 elements:\n    1) <a class=\"\" href=\"/my-data\" data-nav=\"my-data\">My data</a> aka getByRole('link', { name: 'My data', exact: true })\n    2) <a class=\"btn\" href=\"/training\">…</a> aka getByRole('link', { name: 'Create my data' })\n    3) <a class=\"btn\" href=\"/my-data\">…</a> aka getByRole('link', { name: 'See my data' })\n\nCall log:\n  - waiting for getByRole('link', { name: 'My data' })",
+      "screenshot": "artifacts/chrome/integration-taxpayers-I2-·-73366-read-My-data-›-My-taxpayers-chrome-retry3/attachments/screenshot-bf66827f805600be2366f4348b1cd52e573d9700.png"
+    },
+    {
+      "id": "I1",
+      "title": "I1 · AC-1, AC-2 · create \"Ana Dela Cruz\" with the API, see it on the screen",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "I2",
+      "title": "I2 · AC-1, AC-3 · create \"  Rosa Web  \" on the screen, read \"Rosa Web\" from the API",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "W3",
+      "title": "W3 · AC-2 · create with an email, then find the name, mobile and email under My data › My taxpayers",
+      "browser": "chrome",
+      "status": "failed",
+      "error": "Test timeout of 30000ms exceeded.\nError: locator.click: Target page, context or browser has been closed\nCall log:\n  - waiting for getByRole('link', { name: 'My taxpayers' })\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();",
+      "screenshot": "artifacts/chrome/web-taxpayers-W3-·-AC-2-·--15362-nder-My-data-›-My-taxpayers-chrome-retry3/attachments/screenshot-3905d545fa0b20c2186f5103232e2efd4d63cc4b.png"
+    },
+    {
+      "id": "W4",
+      "title": "W4 · AC-2 · reload My taxpayers and still see the name, mobile and email",
+      "browser": "chrome",
+      "status": "failed",
+      "error": "Test timeout of 30000ms exceeded.\nError: locator.click: Target page, context or browser has been closed\nCall log:\n  - waiting for getByRole('link', { name: 'My taxpayers' })\n\n\n  27 | async function toMyTaxpayers(page: any) {\n  28 |   await page.getByRole('link', { name: 'My data' }).click();",
+      "screenshot": "artifacts/chrome/web-taxpayers-W4-·-AC-2-·--80004-e-the-name-mobile-and-email-chrome-retry3/attachments/screenshot-c7a223ea17aa810e5847c28cb49d02f51bf012b6.png"
+    },
+    {
+      "id": "W8",
+      "title": "W8 · AC-5 · type the full name \"A\" (1 letter)",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "W3",
+      "title": "W3 · AC-2 · see the new taxpayer \"Ana Dela Cruz\" in My data",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "W4",
+      "title": "W4 · AC-3 · create a taxpayer using \"  Rosa Web  \": shown as \"Rosa Web\"",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    },
+    {
+      "id": "W8",
+      "title": "W8 · AC-8 · refuse the mobile 0917-123-4567 (dashes) on the screen",
+      "browser": "chrome",
+      "status": "passed",
+      "error": null,
+      "screenshot": null
+    }
+  ],
+  "not_tested": [],
+  "report": "UCTP - 2026-11-05 212429.html",
+  "messages": [],
+  "pushed": false,
+  "push_message": "Commit failed:  fatal: unable to auto-detect email address (got 'machl@DESKTOP-MR55BO5.(none)')",
+  "folder": "test-runs/2026-11-05/UCTP - 2026-11-05 212429",
+  "pages_url": "https://smachlout.github.io/utcp-tests/2026-11-05/UCTP%20-%202026-11-05%20212429/UCTP%20-%202026-11-05%20212429.html",
+  "only": [
+    "I2",
+    "W3",
+    "W4",
+    "I1",
+    "W8"
+  ]
+}
