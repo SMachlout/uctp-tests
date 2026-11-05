@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test run 20261105-213750</title>
+<style>
+:root{--ok:#15803d;--flaky:#b45309;--bad:#b91c1c;--blocked:#d97706;--grey:#6b7280;--line:#e5e7eb}
+body{font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:24px;color:#111827;background:#fff}
+h1{font-size:22px;margin:0 0 4px} .meta{color:var(--grey);margin:0 0 16px}
+.story{white-space:pre-wrap;background:#f9fafb;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0 0 16px}
+.counts{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.count{border:1px solid var(--line);border-radius:8px;padding:8px 14px;min-width:90px}
+.count b{display:block;font-size:24px}
+table{border-collapse:collapse;width:100%} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3f4f6} tr.click{cursor:pointer} tr.click:hover{background:#f9fafb}
+tr.detail{display:none} tr.detail.open{display:table-row} tr.detail td{background:#fafafa}
+pre{white-space:pre-wrap;word-break:break-word;margin:0 0 8px;font-size:13px}
+img{max-width:100%;border:1px solid var(--line)}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;color:#fff;font-size:13px;white-space:nowrap}
+.pill.passed{background:var(--ok)}.pill.flaky{background:var(--flaky)}.pill.failed{background:var(--bad)}
+.pill.blocked{background:var(--blocked)}.pill.not_tested{background:var(--grey)}
+.hint{color:var(--grey);font-size:13px}
+.msg{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:8px 12px;margin:0 0 12px}
+.print{font:inherit;padding:6px 14px;border:1px solid #1d4ed8;background:#1d4ed8;color:#fff;border-radius:6px;cursor:pointer}
+@media print{tr.detail{display:table-row} .noprint{display:none} body{margin:0} tr{break-inside:avoid} img{max-height:90vh}}
+</style></head><body>
+<h1>Test run 20261105-213750</h1>
+<p class="meta">https://city-treasurer-staging.aiqe.pro · browsers: chrome · 2026-11-05T13:37:50.136Z to 2026-11-05T13:42:13.725Z</p>
+<p class="meta">On GitHub Pages about a minute after the push: <a href="https://smachlout.github.io/utcp-tests/2026-11-05/UCTP%20-%202026-11-05%20213750/UCTP%20-%202026-11-05%20213750.html">https://smachlout.github.io/utcp-tests/2026-11-05/UCTP%20-%202026-11-05%20213750/UCTP%20-%202026-11-05%20213750.html</a></p>
+<div class="story">UCTP</div>
+<div class="counts"><div class="count"><b>7</b>Passed</div><div class="count"><b>0</b>Flaky</div><div class="count"><b>2</b>Failed</div><div class="count"><b>1</b>Blocked</div><div class="count"><b>0</b>Not tested</div></div>
+
+<p class="noprint"><button class="print" type="button" onclick="window.print()">Download PDF</button> <span class="hint">Choose "Save as PDF" in the print window. Click a red or amber row to see why.</span></p>
+<table><thead><tr><th>Id</th><th>AC</th><th>Test</th><th>Browser</th><th>Result</th></tr></thead><tbody>
+<tr class="row failed click" data-i="0" tabindex="0">
+<td>W3</td><td>AC-2</td><td>create with an email, then find the name, mobile and email under My data › My taxpayers</td><td>chrome</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d0"><td colspan="5"><pre>Test timeout of 30000ms exceeded.
+Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole(&#39;link&#39;, { name: &#39;My taxpayers&#39; })
+
+
+  27 | async function toMyTaxpayers(page: any) {
+  28 |   await page.getByRole(&#39;link&#39;, { name: &#39;My data&#39; }).click();</pre><img src="artifacts/chrome/web-taxpayers-W3-%C2%B7-AC-2-%C2%B7--15362-nder-My-data-%E2%80%BA-My-taxpayers-chrome-retry3/attachments/screenshot-da9884a2d4a8fd47a089d81d688af21d01e93b2a.png" alt="Screenshot of W3 in chrome"></td></tr>
+<tr class="row passed" data-i="1">
+<td>W3</td><td>AC-2</td><td>see the new taxpayer &quot;Ana Dela Cruz&quot; in My data</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row failed click" data-i="2" tabindex="0">
+<td>W4</td><td>AC-2</td><td>reload My taxpayers and still see the name, mobile and email</td><td>chrome</td><td><span class="pill failed">Failed</span></td></tr><tr class="detail" id="d2"><td colspan="5"><pre>Test timeout of 30000ms exceeded.
+Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole(&#39;link&#39;, { name: &#39;My taxpayers&#39; })
+
+
+  27 | async function toMyTaxpayers(page: any) {
+  28 |   await page.getByRole(&#39;link&#39;, { name: &#39;My data&#39; }).click();</pre><img src="artifacts/chrome/web-taxpayers-W4-%C2%B7-AC-2-%C2%B7--80004-e-the-name-mobile-and-email-chrome-retry3/attachments/screenshot-af94ca36b605034c7f14b9ebea68f29ac5d0d8f2.png" alt="Screenshot of W4 in chrome"></td></tr>
+<tr class="row passed" data-i="3">
+<td>W4</td><td>AC-3</td><td>create a taxpayer using &quot;  Rosa Web  &quot;: shown as &quot;Rosa Web&quot;</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="4">
+<td>W8</td><td>AC-5</td><td>type the full name &quot;A&quot; (1 letter)</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="5">
+<td>W8</td><td>AC-8</td><td>refuse the mobile 0917-123-4567 (dashes) on the screen</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="6">
+<td>I1</td><td>AC-2</td><td>create &quot;Ana &lt;4 letters&gt; Dela Cruz&quot; on screen, then read the API list</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row passed" data-i="7">
+<td>I1</td><td>AC-1, AC-2</td><td>create &quot;Ana Dela Cruz&quot; with the API, see it on the screen</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+<tr class="row blocked click" data-i="8" tabindex="0">
+<td>I2</td><td>AC-2</td><td>create by API with an email, then read My data › My taxpayers</td><td>chrome</td><td><span class="pill blocked">Blocked</span></td></tr><tr class="detail" id="d8"><td colspan="5"><pre>Error: locator.click: Error: strict mode violation: getByRole(&#39;link&#39;, { name: &#39;My data&#39; }) resolved to 3 elements:
+    1) &lt;a class=&quot;&quot; href=&quot;/my-data&quot; data-nav=&quot;my-data&quot;&gt;My data&lt;/a&gt; aka getByRole(&#39;link&#39;, { name: &#39;My data&#39;, exact: true })
+    2) &lt;a class=&quot;btn&quot; href=&quot;/training&quot;&gt;…&lt;/a&gt; aka getByRole(&#39;link&#39;, { name: &#39;Create my data&#39; })
+    3) &lt;a class=&quot;btn&quot; href=&quot;/my-data&quot;&gt;…&lt;/a&gt; aka getByRole(&#39;link&#39;, { name: &#39;See my data&#39; })
+
+Call log:
+  - waiting for getByRole(&#39;link&#39;, { name: &#39;My data&#39; })</pre><img src="artifacts/chrome/integration-taxpayers-I2-%C2%B7-73366-read-My-data-%E2%80%BA-My-taxpayers-chrome-retry3/attachments/screenshot-fa49054fdb4dc2f8de54eb6da275ca22fce77562.png" alt="Screenshot of I2 in chrome"></td></tr>
+<tr class="row passed" data-i="9">
+<td>I2</td><td>AC-1, AC-3</td><td>create &quot;  Rosa Web  &quot; on the screen, read &quot;Rosa Web&quot; from the API</td><td>chrome</td><td><span class="pill passed">Passed</span></td></tr>
+</tbody></table>
+<script>
+document.querySelectorAll('tr.click').forEach(function (tr) {
+  function toggle() { var d = document.getElementById('d' + tr.dataset.i); if (d) d.classList.toggle('open'); }
+  tr.addEventListener('click', toggle);
+  tr.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+});
+</script>
+</body></html>
