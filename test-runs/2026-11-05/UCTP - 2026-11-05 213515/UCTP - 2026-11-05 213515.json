@@ -35,8 +35,8 @@
   "not_tested": [],
   "report": "UCTP - 2026-11-05 213515.html",
   "messages": [],
-  "pushed": false,
-  "push_message": "",
+  "pushed": true,
+  "push_message": "Pushed. CI runs on GitHub too.",
   "folder": "test-runs/2026-11-05/UCTP - 2026-11-05 213515",
   "pages_url": "https://smachlout.github.io/utcp-tests/2026-11-05/UCTP%20-%202026-11-05%20213515/UCTP%20-%202026-11-05%20213515.html",
   "only": [
